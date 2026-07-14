@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PenFed FICO Credit Score Experience - UX Research Case Study by Kunal Gupta" />
+  <title>Reimagining the FICO Credit Score Experience - Case Study | Kunal Gupta</title>
+  <style>
+    :root {
+      /* Google Material + IBM Carbon Hybrid Design System */
+      --bg: #ffffff;
+      --surface: #f4f4f4;
+      --fg: #161616;
+      --muted: #525252;
+      --border: #e0e0e0;
+      --accent: #1a73e8;
+      --accent-on: #ffffff;
+      --accent-hover: #1557b0;
+      --accent-active: #174ea6;
+      --accent-soft: #e8f0fe;
+      --secondary: #ea4335;
+      --success: #0f9d58;
+      --warn: #f9ab00;
+      --danger: #da1e28;
+
+      --font-display: "Google Sans", Roboto, "Helvetica Neue", sans-serif;
+      --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "IBM Plex Mono", "Roboto Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--surface);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    nav .logo {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 510;
+      letter-spacing: 0.01em;
+      padding: 12px 8px;
+    }
+
+    nav a:hover {
+      color: var(--fg);
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 120px;
+      padding-bottom: 64px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a {
+      color: var(--accent);
+    }
+
+    .breadcrumb span {
+      color: var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      margin-bottom: 20px;
+    }
+
+    .hero .lead {
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 32px 0 0;
+      margin-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .meta-item h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .meta-item p {
+      font-size: 16px;
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    /* Section */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    /* Big Stat Hero */
+    .stat-hero {
+      text-align: center;
+      padding: 80px 24px;
+      background: linear-gradient(135deg, var(--accent-soft) 0%, var(--surface) 100%);
+      border-radius: 16px;
+      margin: 48px 0;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-hero .big-number {
+      font-family: var(--font-display);
+      font-size: clamp(64px, 10vw, 96px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .stat-hero .stat-description {
+      font-size: 20px;
+      color: var(--fg);
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* User Quote Block */
+    .user-quote {
+      background: var(--surface);
+      border-left: 4px solid var(--accent);
+      padding: 32px 40px;
+      margin: 64px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+      max-width: 800px;
+    }
+
+    .user-quote blockquote {
+      font-size: 20px;
+      line-height: 1.6;
+      font-style: italic;
+      color: var(--fg);
+      margin-bottom: 16px;
+    }
+
+    .user-quote cite {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* Comparison Grid */
+    .comparison-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 0;
+      margin: 64px 0;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+
+    .comparison-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .comparison-card .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+
+    .comparison-card .label.before {
+      background: rgba(239, 68, 68, 0.1);
+      color: rgb(220, 38, 38);
+    }
+
+    .comparison-card .label.after {
+      background: rgba(34, 197, 94, 0.1);
+      color: rgb(22, 163, 74);
+    }
+
+    .comparison-card h4 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .comparison-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Research Process */
+    .process-bullets {
+      list-style: none;
+      max-width: 600px;
+      margin: 32px auto;
+    }
+
+    .process-bullets li {
+      font-size: 16px;
+      padding-left: 32px;
+      position: relative;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .process-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    /* Impact Grid */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin: 48px 0;
+    }
+
+    .impact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .impact-card .number {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .impact-card .label {
+      font-size: 15px;
+      color: var(--fg);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Findings List */
+    .findings-list {
+      list-style: none;
+      max-width: 900px;
+      margin: 32px auto;
+    }
+
+    .findings-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .findings-list strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .findings-list p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Actions List */
+    .actions-list {
+      list-style: none;
+      max-width: 900px;
+      margin: 32px auto;
+    }
+
+    .actions-list li {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .actions-list h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: var(--fg);
+    }
+
+    .actions-list .principle {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .actions-list p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 16px;
+      background: var(--accent);
+      color: white;
+      border: 0;
+      margin-top: 48px;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      background: oklch(38% 0.14 232);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--fg);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 100px;
+        padding-bottom: 48px;
+      }
+
+      .project-meta {
+        gap: 24px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .stat-hero {
+        padding: 60px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">Kunal Gupta</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="index.html#work">Work</a>
+          <span>/</span>
+          <span>PenFed FICO Credit Score</span>
+        </div>
+
+        <span class="eyebrow">Financial UX Research · PenFed</span>
+        <h1>Reimagining the FICO Credit Score Experience</h1>
+        <p class="lead">
+          Transforming credit score reporting from a static number display into a personalized financial coaching platform that helps users understand, improve, and actively manage their credit health.
+        </p>
+
+        <div class="project-meta">
+          <div class="meta-item">
+            <h4>Client</h4>
+            <p>PenFed Federal Credit Union</p>
+          </div>
+          <div class="meta-item">
+            <h4>Duration</h4>
+            <p>6 months</p>
+          </div>
+          <div class="meta-item">
+            <h4>Role</h4>
+            <p>UX Researcher & Product Strategist</p>
+          </div>
+          <div class="meta-item">
+            <h4>Methods</h4>
+            <p>Behavioral Research · Workshops · Competitor Analysis</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="stat-hero">
+          <div class="big-number">78%</div>
+          <p class="stat-description">of users viewed their credit score but didn't understand how to improve it</p>
+        </div>
+
+        <div class="user-quote">
+          <blockquote>"I check my score every month and it goes up or down, but I have no idea why. I wish it would just tell me what I'm doing wrong and how to fix it."</blockquote>
+          <cite>— Credit union member, behavioral research session</cite>
+        </div>
+      </div>
+    </section>
+
+    <div class="comparison-section">
+      <div class="container">
+        <h2 class="section-title">Key Findings</h2>
+
+        <ul class="findings-list">
+          <li><strong>Score Without Context:</strong> Users viewed credit scores as static numbers without understanding the factors affecting them or why scores changed month-to-month.</li>
+          <li><strong>Generic Recommendations:</strong> Existing guidance like "Improve your credit utilization" was too vague to translate into actionable steps for most users.</li>
+          <li><strong>Financial Terminology Barrier:</strong> Terms like "utilization ratio," "credit mix," and "hard inquiries" created confusion and disengaged users from taking action.</li>
+          <li><strong>Lack of Motivation:</strong> Without visible progress tracking or predicted outcomes, users had no incentive to change financial behaviors consistently.</li>
+          <li><strong>Missed Educational Opportunities:</strong> Financial literacy content existed separately from the score experience, preventing contextual learning moments.</li>
+        </ul>
+
+        <h2 class="section-title" style="margin-top: 64px;">Problems → Solutions</h2>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <span class="label before">Problem</span>
+            <h4>Score displayed without explanation of changes</h4>
+            <p>Users saw their score increase or decrease but had no visibility into which financial behaviors caused the change.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="label after">Solution</span>
+            <h4>Score change timeline with factor attribution</h4>
+            <p>Show month-over-month changes with specific factors highlighted: "Your score increased by 12 points because you paid down $2,400 in credit card debt."</p>
+          </div>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <span class="label before">Problem</span>
+            <h4>Generic advice that wasn't actionable</h4>
+            <p>"Lower your credit utilization" provided no specific guidance on how much to pay or which accounts to prioritize.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="label after">Solution</span>
+            <h4>Personalized action plans with predicted impact</h4>
+            <p>"Paying $500 toward Card A could improve your score by 8-12 points. This card has the highest impact because your utilization is at 82%."</p>
+          </div>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <span class="label before">Problem</span>
+            <h4>Financial education separated from score</h4>
+            <p>Educational content lived in a different section. Users never discovered it when viewing their scores.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="label after">Solution</span>
+            <h4>Contextual micro-learning embedded in experience</h4>
+            <p>Inline tooltips, visual diagrams, and "Learn why this matters" links placed exactly where users need them most.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Research Approach</h2>
+        <ul class="process-bullets">
+          <li><strong>Behavioral research</strong> analyzing credit monitoring habits and financial decision-making patterns</li>
+          <li><strong>User psychology mapping</strong> exploring financial anxiety, motivation triggers, and behavioral barriers</li>
+          <li><strong>Discovery workshops</strong> with cross-functional teams to ideate solutions and prioritize opportunities</li>
+          <li><strong>Competitor analysis</strong> evaluating 12+ credit score and banking experiences for gaps and opportunities</li>
+          <li><strong>Information architecture redesign</strong> restructuring the experience from score reporting to financial coaching</li>
+        </ul>
+
+        <div class="user-quote">
+          <blockquote>"This is the first time someone has explained credit scores in a way I actually understand. I always felt stupid asking what these terms meant."</blockquote>
+          <cite>— User testing participant, validation session</cite>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <h2 class="section-title">5 Actions Driven by UX Principles</h2>
+
+        <ul class="actions-list">
+          <li>
+            <span class="principle">Transparency + Trust Building</span>
+            <h4>Created score factor breakdown with clear explanations</h4>
+            <p>Transformed opaque credit scores into transparent calculations. Users now see exactly how payment history (35%), credit utilization (30%), credit age (15%), credit mix (10%), and new credit (10%) contribute to their score — building trust through transparency.</p>
+          </li>
+
+          <li>
+            <span class="principle">Behavioral Economics + Goal Gradient Effect</span>
+            <h4>Designed progress tracking with predicted score improvements</h4>
+            <p>Introduced visual progress bars and score forecasting: "If you continue making on-time payments, your score could reach 720 in 4 months." Research shows progress visualization increases motivation and follow-through on financial goals.</p>
+          </li>
+
+          <li>
+            <span class="principle">Personalization + Behavioral Nudges</span>
+            <h4>Built recommendation engine analyzing individual financial patterns</h4>
+            <p>Instead of generic advice, system analyzes user's specific credit profile and suggests 2-3 highest-impact actions personalized to their situation. Includes predicted score impact for each recommendation to drive prioritization.</p>
+          </li>
+
+          <li>
+            <span class="principle">Just-in-Time Learning + Cognitive Load</span>
+            <h4>Embedded contextual education throughout the experience</h4>
+            <p>Rather than overwhelming users with financial literacy content upfront, we introduced micro-learning moments contextually. Tooltips, visual diagrams, and "Why this matters" explanations appear exactly when users need them, reducing cognitive load.</p>
+          </li>
+
+          <li>
+            <span class="principle">Loss Aversion + Feedback Loops</span>
+            <h4>Implemented predictive impact messaging for financial decisions</h4>
+            <p>Before users make credit-impacting decisions (new loan applications, closing accounts), system shows predicted score impact: "Opening this card may temporarily lower your score by 5-10 points due to hard inquiry." Leverages loss aversion to encourage informed decisions.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <h2 class="section-title">Impact</h2>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="number">4 Pillars</div>
+            <div class="label">Strategic framework: Understanding, Guidance, Motivation, Awareness</div>
+          </div>
+          <div class="impact-card">
+            <div class="number">12+</div>
+            <div class="label">Competitor products analyzed</div>
+          </div>
+          <div class="impact-card">
+            <div class="number">End-to-End</div>
+            <div class="label">Full UX process from research to concept</div>
+          </div>
+          <div class="impact-card">
+            <div class="number">Future-State</div>
+            <div class="label">Financial coaching platform roadmap</div>
+          </div>
+        </div>
+
+        <a href="index.html#work" class="back-link">
+          ← Back to All Work
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Kunal Gupta. Built with intention — designed for impact.</p>
+    </div>
+  </footer>
+</body>
+</html>

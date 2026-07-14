@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Film & Photography — Documentary Filmmaker & Ethnographer | Kunal Gupta</title>
+  <meta name="description" content="Impact films and ethnographic documentation (2015–2021) — India in a Day feature film, tribal ethnography, autism center, dairy entrepreneurship, solar documentation across 10 states">
+  <style>
+    :root {
+      /* Pure Google Material Design System */
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-variant: #f5f5f5;
+      --fg: #212121;
+      --fg-secondary: #757575;
+      --muted: #9e9e9e;
+      --border: #e0e0e0;
+
+      /* Material Blue Palette */
+      --accent: #1976d2;
+      --accent-light: #42a5f5;
+      --accent-dark: #1565c0;
+      --accent-on: #ffffff;
+      --accent-hover: #1565c0;
+      --accent-active: #0d47a1;
+      --accent-soft: #e3f2fd;
+
+      /* Indian Cultural Color Palette */
+      --saffron: #ff9933;
+      --india-green: #138808;
+
+      /* Material Semantic Colors */
+      --success: #4caf50;
+      --warn: #ff9800;
+      --danger: #f44336;
+      --info: #2196f3;
+
+      /* Material Typography */
+      --font-display: "Roboto", "Helvetica Neue", sans-serif;
+      --font-body: "Roboto", "Helvetica Neue", sans-serif;
+      --font-mono: "Roboto Mono", ui-monospace, monospace;
+
+      /* Material Elevation Shadows */
+      --elevation-0: none;
+      --elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --elevation-2: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+      --elevation-3: 0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.10);
+      --elevation-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      box-shadow: var(--elevation-2);
+      z-index: 1000;
+    }
+
+    nav .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(25, 118, 210, 0.06) 0%, rgba(255, 153, 51, 0.06) 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--fg);
+      letter-spacing: -0.015em;
+    }
+
+    .hero .lead {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--muted);
+      max-width: 820px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .content-narrow {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* Section */
+    section {
+      padding: 64px 24px;
+    }
+
+    section h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+    }
+
+    section h3 {
+      font-size: clamp(20px, 3vw, 24px);
+      font-weight: 500;
+      margin-bottom: 12px;
+      margin-top: 32px;
+      color: var(--fg);
+    }
+
+    section p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--fg);
+      margin-bottom: 20px;
+    }
+
+    /* Film Grid */
+    .film-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .film-card {
+      background: var(--surface);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: all 0.3s;
+      box-shadow: var(--elevation-1);
+    }
+
+    .film-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--elevation-4);
+      border-color: var(--accent);
+    }
+
+    .film-card .content {
+      padding: 28px;
+    }
+
+    .film-card .meta {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .film-card .tag {
+      display: inline-flex;
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .film-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 10px 0;
+      color: var(--fg);
+      line-height: 1.3;
+    }
+
+    .film-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .film-card .highlight {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--fg-secondary);
+    }
+
+    .film-card .highlight strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Timeline */
+    .timeline {
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 40px;
+      border: 1px solid var(--border);
+      margin-top: 48px;
+    }
+
+    .timeline h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0 0 32px 0;
+      color: var(--fg);
+    }
+
+    .timeline-grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .timeline-year {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeline-content {
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline-entry h4 {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--fg);
+      margin-bottom: 6px;
+    }
+
+    .timeline-entry p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: var(--surface);
+      padding: 48px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 64px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stat-item .number {
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-item .label {
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* Skills Badge */
+    .skills-badge {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: var(--accent-on);
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      box-shadow: var(--elevation-2);
+      margin-top: 40px;
+    }
+
+    .back-link:hover {
+      background: var(--accent-dark);
+      box-shadow: var(--elevation-4);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 24px 40px;
+      }
+
+      section {
+        padding: 48px 24px;
+      }
+
+      .film-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        padding: 24px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    ul {
+      margin-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Kunal Gupta</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="container">
+      <h1>Film & Photography</h1>
+      <p class="lead">
+        Impact films and ethnographic documentation spanning 2015–2026. Visual storytelling through documentary filmmaking, photography, and field research — collaborating with NGOs, academic institutions, and government initiatives to document social impact, cultural preservation, and rural development across India.
+      </p>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="number">15+</div>
+        <div class="label">Documentary Films</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">10</div>
+        <div class="label">States Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">11</div>
+        <div class="label">Years of Practice</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">50+</div>
+        <div class="label">Field Assignments</div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container content-narrow">
+      <h2>Featured Films</h2>
+      <p>Documentary films and visual storytelling projects that combine ethnographic practice with social impact — from international feature films to community-centered documentaries.</p>
+
+      <div class="film-grid">
+        <!-- Latest: Krupa Care -->
+        <div class="film-card">
+          <div class="content">
+            <div class="meta">
+              <span class="tag">AIM FOR SEWA</span>
+              <span class="tag">2026</span>
+            </div>
+            <h3>Krupa Care — Center for Developmental Disorders & Autism</h3>
+            <p>Documentary film documenting Krupa Care, a specialized center for children and adults with developmental disorders and autism. Captured therapeutic interventions, family support systems, and the daily journey of care providers and beneficiaries.</p>
+            <div class="highlight">
+              <strong>Impact:</strong> Showcased inclusive care models and raised awareness about developmental support needs
+            </div>
+          </div>
+        </div>
+
+        <!-- Latest: FWWB Dairy -->
+        <div class="film-card">
+          <div class="content">
+            <div class="meta">
+              <span class="tag">FWWB</span>
+              <span class="tag">2026</span>
+            </div>
+            <h3>FWWB Dairy Entrepreneurship — Women-Owned Cooperatives</h3>
+            <p>Documented women-led dairy entrepreneurship initiatives supported by Friends of Women's World Banking (FWWB). Captured the stories of women cooperative members building sustainable livelihoods through dairy farming, milk collection, and micro-enterprise development.</p>
+            <div class="highlight">
+              <strong>Focus:</strong> Women's economic empowerment, cooperative models, and rural entrepreneurship
+            </div>
+          </div>
+        </div>
+
+        <!-- Story of Kumba and Saijo -->
+        <div class="film-card">
+          <div class="content">
+            <div class="meta">
+              <span class="tag">AIM FOR SEVA</span>
+              <span class="tag">2023</span>
+            </div>
+            <h3>Story of Kumba and Saijo — Educational Transformation</h3>
+            <p>A story of transformation and social impact at AIM for Seva's Dewas project. Documented how two girls from Nagaland and Manipur came to study at the school and hostel, and how their education empowered them to return to their villages and create change by becoming teachers themselves, breaking cycles and inspiring their communities.</p>
+            <div class="highlight">
+              <strong>Impact:</strong> Educational empowerment · Community transformation · Teacher development
+            </div>
+          </div>
+        </div>
+
+        <!-- India in a Day -->
+        <div class="film-card">
+          <div class="content">
+            <div class="meta">
+              <span class="tag">RIDLEY SCOTT</span>
+              <span class="tag">ANURAG KASHYAP</span>
+              <span class="tag">2015-16</span>
+            </div>
+            <h3>India in a Day — Crowdsourced Feature Film</h3>
+            <p>Contributor to India's first fully crowdsourced feature film capturing life in an evolving India on October 10, 2015. Executive produced by Ridley Scott and Anurag Kashyap, directed by Richie Mehta. Premiered at Toronto International Film Festival and opened at MAMI Film Club with a rousing ovation.</p>
+            <div class="highlight">
+              <strong>Recognition:</strong> TIFF selection · MAMI Film Club premiere · Nationwide theatrical release
+            </div>
+          </div>
+        </div>
+
+        <!-- Inside Sehrana -->
+        <div class="film-card">
+          <div class="content">
+            <div class="meta">
+              <span class="tag">ETHNOGRAPHY</span>
+              <span class="tag">2016-17</span>
+            </div>
+            <h3>Inside Sehrana — Chambal Valley Sahariya Tribes</h3>
+            <p>Deep, longitudinal photo-documentary capturing the story of the Sahariya tribe in Chambal Valley, Madhya Pradesh. Focused on migration patterns, bonded labor systems, disappearing forests, and the multi-generational debt cycles trapping one of India's most marginalized communities. An immersive ethnographic project revealing systemic challenges.</p>
+            <div class="highlight">
+              <strong>Method:</strong> Long-term immersion · Participatory ethnography · Systemic documentation
+            </div>
+          </div>
+        </div>
+
+        <!-- Sahariya Tribes Ornaments -->
+        <div class="film-card">
+          <div class="content">
+            <div class="meta">
+              <span class="tag">ETHNOGRAPHY</span>
+              <span class="tag">2016</span>
+            </div>
+            <h3>Sahariya Tribes Ornaments — Traditional to Artificial</h3>
+            <p>Ethnographic film associated with Dhirubhai Ambani University focusing on ethnohistoric data of Sahariya Tribes of Chambal Valley, Madhya Pradesh. Documents the cultural transition in ornaments from traditional to artificial materials, exploring values, beliefs, and adaptation through material culture.</p>
+            <div class="highlight">
+              <strong>Method:</strong> Participatory ethnography · Cultural documentation · Material culture analysis
+            </div>
+          </div>
+        </div>
+
+        <!-- SOULS Project -->
+        <div class="film-card">
+          <div class="content">
+            <div class="meta">
+              <span class="tag">IIT BOMBAY</span>
+              <span class="tag">MNRE</span>
+              <span class="tag">2018</span>
+            </div>
+            <h3>SOULS — 70 Lakh Solar Study Lamp Scheme Documentation</h3>
+            <p>Field documentation across 5 states (Assam, Bihar, Jharkhand, Uttar Pradesh & Odisha) for IIT Bombay and Ministry of New and Renewable Energy. Visual research documenting the impact of solar-powered study lamps in tribal and rural districts, capturing student study patterns, household transformations, and adoption barriers across 1000+ blocks.</p>
+            <div class="highlight">
+              <strong>Scale:</strong> 5 states · 1000+ blocks · 8 million students benefitted · Solar access documentation
+            </div>
+          </div>
+        </div>
+
+        <!-- Durga Energy -->
+        <div class="film-card">
+          <div class="content">
+            <div class="meta">
+              <span class="tag">IIT BOMBAY</span>
+              <span class="tag">2018</span>
+            </div>
+            <h3>Durga Energy — Tribal Women-Led Solar Manufacturing</h3>
+            <p>Documented a solar panel factory in Dungarpur, Rajasthan run by 60 tribal women, promoting clean energy and economic empowerment. Captured the training processes, manufacturing operations, and the stories of women transforming from subsistence workers to skilled solar technicians, creating sustainable livelihoods.</p>
+            <div class="highlight">
+              <strong>Impact:</strong> Women's economic empowerment · Clean energy access · Skill development
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container content-narrow">
+      <h2>Photography & Field Assignments</h2>
+      <p>Ethnographic photography and documentation projects spanning tribal communities, cultural festivals, social initiatives, and renewable energy adoption — capturing the lived experience of marginalized communities and development interventions across India.</p>
+
+      <div class="timeline">
+        <h3>Timeline (2015–2026)</h3>
+
+        <div class="timeline-grid">
+          <!-- 2015 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2015</div>
+            <div class="timeline-content">
+              <div class="timeline-entry">
+                <h4>Deoghar, Jharkhand — Santhal Tribe Documentation</h4>
+                <p>Documented the cultural life, rituals, and daily practices of the Santhal tribe. Captured traditional ceremonies, community gatherings, and everyday life in tribal villages.</p>
+              </div>
+              <div class="timeline-entry">
+                <h4>Block Printing of Pethapur — Gandhinagar, Gujarat</h4>
+                <p>Explored traditional hand-block printing techniques and artisan livelihood. Documented master craftsmen, printing processes, and the economic challenges facing traditional artisan communities.</p>
+              </div>
+              <div class="timeline-entry">
+                <h4>India in a Day — Crowdsourced Feature Film Contributor</h4>
+                <p>Participated in India's first fully crowdsourced feature film. Filmed stories about life in an evolving India on October 10, 2015 — from the ordinary to the extraordinary, personal to profound.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2016 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2016</div>
+            <div class="timeline-content">
+              <div class="timeline-entry">
+                <h4>Kite Festival — Ahmedabad, Gujarat</h4>
+                <p>Visual storytelling of India's iconic cultural festival in the heritage city. Captured the vibrant colors, community celebrations, and cultural significance of Uttarayan in urban Ahmedabad.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2016-17 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2016–17</div>
+            <div class="timeline-content">
+              <div class="timeline-entry">
+                <h4>Inside Sehrana — Chambal Valley, Madhya Pradesh</h4>
+                <p>Deep, longitudinal photo-documentary capturing the story of the Sahariya tribe. Focused on migration patterns, bonded labor systems, disappearing forests, and the multi-generational debt cycles trapping one of India's most marginalized communities.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2017 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2017</div>
+            <div class="timeline-content">
+              <div class="timeline-entry">
+                <h4>AIM for SEWA (NGO) — Jabalpur, Dewas, Amreli, Moviya</h4>
+                <p>Documented NGO-led initiatives providing education and accommodation for underprivileged rural children. Captured the stories of children accessing quality education, residential facilities, and skill development opportunities through SEWA's intervention programs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2018 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2018</div>
+            <div class="timeline-content">
+              <div class="timeline-entry">
+                <h4>MNRE's 70 Lakh Solar Study Lamp Scheme — IIT Bombay</h4>
+                <p>Field documentation across 5 states (Assam, Bihar, Jharkhand, Uttar Pradesh & Odisha), focused on rural access to solar-powered study lamps. Visual research documenting the impact of solar lighting in tribal and rural districts, capturing student study patterns, household transformations, and adoption barriers.</p>
+              </div>
+              <div class="timeline-entry">
+                <h4>5 Lakh Solar Study Scheme — IIT Bombay × IDEA Cellular × Indian Oil</h4>
+                <p>Documentation across three critical locations: Gadchiroli (Maharashtra), Meerut (Uttar Pradesh), and Dungarpur (Rajasthan). Focused on distribution networks, community engagement, and household-level impacts of solar lighting.</p>
+              </div>
+              <div class="timeline-entry">
+                <h4>Durga Energy — IIT Bombay, Dungarpur, Rajasthan</h4>
+                <p>Documented a solar panel factory run by 60 tribal women, promoting clean energy and economic empowerment. Captured the training processes, manufacturing operations, and the stories of women transforming from subsistence workers to skilled solar technicians.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2020 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-content">
+              <div class="timeline-entry">
+                <h4>HARELA Project — ONGC CSR Initiative, Uttarakhand</h4>
+                <p>Field photography and documentation of a women-led organic farming initiative promoting sustainable agricultural practices in the hill state. Captured traditional farming knowledge, organic cultivation methods, and the role of women farmers in environmental conservation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-content">
+              <div class="timeline-entry">
+                <h4>Story of Kumba and Saijo — AIM for Seva, Dewas Project</h4>
+                <p>A story of transformation and social impact. Documented how two girls from Nagaland and Manipur came to study at an AIM for Seva school and hostel, and how their education empowered them to return to their villages and create change by becoming teachers themselves, breaking cycles and inspiring their communities.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2026 -->
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <div class="timeline-entry">
+                <h4>Krupa Care — AIM for SEWA, Developmental Disorders Center</h4>
+                <p>Documentary film documenting a center for children and adults with developmental disorders and autism. Captured therapeutic interventions, family support systems, and inclusive care models.</p>
+              </div>
+              <div class="timeline-entry">
+                <h4>FWWB Dairy Entrepreneurship — Women-Owned Cooperatives</h4>
+                <p>Documented women-led dairy entrepreneurship initiatives. Focused on cooperative models, milk collection systems, and economic empowerment through sustainable dairy farming practices.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-badge">
+          <strong>Skills:</strong> Photography · Ethnography · Documentary Filmmaking · Visual Storytelling · Field Research · Cultural Documentation · Participatory Video · Social Impact Documentation
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container content-narrow">
+      <h2>Practice & Approach</h2>
+      <p>
+        My film and photography practice is rooted in ethnographic methodology — long-term immersion, participatory documentation, and a commitment to centering the voices and stories of marginalized communities. Each project balances visual craft with ethical responsibility, aiming to document lived experience rather than impose external narratives.
+      </p>
+
+      <h3>Core Principles</h3>
+      <ul>
+        <li><strong>Participatory documentation:</strong> Involving community members in framing, shooting, and storytelling decisions to ensure authentic representation</li>
+        <li><strong>Long-term engagement:</strong> Building trust through sustained presence rather than extractive one-time visits</li>
+        <li><strong>Context over aesthetics:</strong> Prioritizing cultural context, historical depth, and systemic understanding over surface-level visual appeal</li>
+        <li><strong>Impact orientation:</strong> Creating work that serves community advocacy, policy influence, or educational purposes beyond gallery exhibition</li>
+      </ul>
+
+      <h3>Technical Approach</h3>
+      <p>
+        Documentary filmmaking using natural light, observational methods, and interview techniques adapted to rural and tribal contexts. Photography focused on environmental portraiture, daily life documentation, and visual ethnography. Field equipment prioritizes portability and resilience over high-end production value — work that can be carried into remote villages and operate in challenging conditions.
+      </p>
+
+      <h3>Collaborations</h3>
+      <p>
+        Worked with academic institutions (IIT Bombay, Dhirubhai Ambani University, Boston College School of Social Work), NGOs (AIM for SEWA, FWWB), government ministries (Ministry of New and Renewable Energy), and community-based organizations to document social impact, development interventions, and cultural preservation initiatives.
+      </p>
+
+      <a href="index.html#work" class="back-link">
+        ← Back to All Work
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

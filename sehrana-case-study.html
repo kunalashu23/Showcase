@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inside Sehrana — Kunal Gupta</title>
+  <style>
+    :root {
+      /* Google Material + IBM Carbon Hybrid Design System */
+      --accent: #1a73e8;
+      --accent-hover: #1557b0;
+      --accent-active: #174ea6;
+      --text: #161616;
+      --text-secondary: #525252;
+      --bg: #ffffff;
+      --surface: #f4f4f4;
+      --border: #e0e0e0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    nav {
+      background: var(--surface);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, oklch(95% 0.02 232) 0%, var(--surface) 100%);
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 24px;
+      line-height: 1.2;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .project-meta {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin: 32px auto 0;
+      flex-wrap: wrap;
+      max-width: 800px;
+    }
+
+    .hero .project-meta div {
+      text-align: center;
+    }
+
+    .hero .project-meta strong {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    .hero .project-meta span {
+      display: block;
+      color: var(--text);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      margin: 64px 0;
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 32px;
+      color: var(--text);
+    }
+
+    .hook {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 48px;
+      margin: 64px 0;
+      text-align: center;
+    }
+
+    .hook .stat {
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 24px;
+      line-height: 1;
+    }
+
+    .hook .description {
+      font-size: 20px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+
+    .quote {
+      font-style: italic;
+      color: var(--text-secondary);
+      font-size: 18px;
+      border-left: 4px solid var(--accent);
+      padding-left: 24px;
+      margin-top: 24px;
+    }
+
+    .findings-list {
+      list-style: none;
+      margin: 32px 0;
+    }
+
+    .findings-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      transition: border-color 0.2s;
+    }
+
+    .findings-list li:hover {
+      border-color: var(--accent);
+    }
+
+    .findings-list strong {
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .findings-list span {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin: 48px 0;
+    }
+
+    .comparison-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .comparison-item h4 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .comparison-item.challenge h4 {
+      color: #c92a2a;
+    }
+
+    .comparison-item.insight h4 {
+      color: #2f9e44;
+    }
+
+    .comparison-item p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .research-approach {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 40px;
+      margin: 48px 0;
+    }
+
+    .research-approach ul {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .research-approach li {
+      padding: 12px 0 12px 32px;
+      position: relative;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .research-approach li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .actions-section {
+      background: linear-gradient(135deg, oklch(95% 0.02 232) 0%, var(--surface) 100%);
+      border-radius: 12px;
+      padding: 48px;
+      margin: 64px 0;
+    }
+
+    .actions-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+
+    .actions-list li {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .actions-list strong {
+      display: block;
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .actions-list .principle {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .actions-list p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 48px 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .impact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .impact-card .number {
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .impact-card .label {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 48px 0;
+    }
+
+    .photo-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hook .stat {
+        font-size: 42px;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero .project-meta {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">Kunal Gupta</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Inside Sehrana: Uncovering the Invisible Struggles of the Sahariya Tribes</h1>
+    <div class="project-meta">
+      <div>
+        <strong>Role</strong>
+        <span>Communication Design Researcher</span>
+      </div>
+      <div>
+        <strong>Project Type</strong>
+        <span>Masters Thesis — DA-IICT Gandhinagar</span>
+      </div>
+      <div>
+        <strong>Scope</strong>
+        <span>12 Villages Across Sheopur</span>
+      </div>
+      <div>
+        <strong>Location</strong>
+        <span>Chambal Valley, Madhya Pradesh</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hook">
+      <div class="stat">Particularly Vulnerable Tribal Group</div>
+      <p class="description">
+        In a world moving rapidly toward urbanization and digital revolution, the Sahariya tribes of Madhya Pradesh remain caught in a time loop of systemic neglect, socio-economic bondage, and cultural erosion. This research aimed to humanize, document, and co-communicate the marginalized lives of one of India's most vulnerable tribal communities.
+      </p>
+      <p class="quote">"Karza le lo — quintal ho ya sher bhar — karza to hai." ("Be it a kilo or a ton, debt is still debt.") — Sahariya elder</p>
+    </div>
+
+    <section>
+      <h2>5 Key Findings</h2>
+      <ul class="findings-list">
+        <li>
+          <strong>Debt is Endemic — Economic, Cultural, and Intergenerational</strong>
+          <span>From paying medical bills to marrying off daughters, Sahariyas are forced to borrow at interest rates of 5–10% per month. This isn't just about money — it's about generational bondage. Children inherit not only land but also debt and the trauma of unpaid dues.</span>
+        </li>
+        <li>
+          <strong>Gendered Oppression Intensified by Alcoholism and Poverty</strong>
+          <span>Women bore the worst brunt — domestic violence, economic dependency, and cultural invisibility. Government-sanctioned yet unregulated local alcohol production devastated many households, especially women and children.</span>
+        </li>
+        <li>
+          <strong>Government Schemes Suffer from Poor Implementation and Corruption</strong>
+          <span>Despite constitutional protections, welfare schemes, and employment guarantees, ground realities tell a different story. MNREGA jobs are rare or manipulated. Healthcare access is abysmal — maternal deaths are common. Educational incentives often trigger early marriages rather than empowerment.</span>
+        </li>
+        <li>
+          <strong>Loss of Forest Access Not Compensated with Viable Alternatives</strong>
+          <span>The Sahariyas — classified as a Particularly Vulnerable Tribal Group (PVTG) — once lived symbiotically with the forests. Decades of deforestation, policy neglect, and forced dependence on exploitative systems have brought them to the edge of survival. Forest laws criminalize their traditional livelihoods without offering alternatives.</span>
+        </li>
+        <li>
+          <strong>Youth Aspirations High, But Social and Systemic Barriers Persist</strong>
+          <span>While some youth reached college-level education, caste-based discrimination and economic pressure often led to school dropouts. With forests shrinking and jobs disappearing, seasonal migration has become a way of life — from Sheopur to Jaipur and Ahmedabad, Sahariyas work 12-hour shifts in brick kilns or factories for meager wages, only to return with illnesses, injuries, and more debt.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Research Questions</h2>
+      <div class="comparison-grid">
+        <div class="comparison-item challenge">
+          <h4>Question</h4>
+          <p>Who really owns the Sahariyas — the state, the landlords, or society?</p>
+        </div>
+        <div class="comparison-item insight">
+          <h4>Finding</h4>
+          <p>A disconnect between policy and reality exposes a fundamental failure in the delivery of justice to tribal communities. Constitutional protections exist on paper, but exploitative systems—debt bondage, manipulated welfare schemes, criminalized traditional livelihoods—keep the Sahariyas in a cycle of dependence.</p>
+        </div>
+
+        <div class="comparison-item challenge">
+          <h4>Question</h4>
+          <p>Why has the Constitution failed them despite its strong tribal provisions?</p>
+        </div>
+        <div class="comparison-item insight">
+          <h4>Finding</h4>
+          <p>Government schemes, though well-intended, suffer from poor implementation and corruption. MNREGA jobs are rare or manipulated. Healthcare access is abysmal. Educational incentives often trigger early marriages rather than empowerment. Forest laws criminalize their traditional livelihoods without offering alternatives.</p>
+        </div>
+
+        <div class="comparison-item challenge">
+          <h4>Question</h4>
+          <p>How does a community once self-sustained by nature become permanently trapped in a cycle of debt and bonded labor?</p>
+        </div>
+        <div class="comparison-item insight">
+          <h4>Finding</h4>
+          <p>Decades of deforestation and policy neglect forced the Sahariyas into dependence on exploitative moneylenders. Debt is endemic—not just economic but cultural and intergenerational. Children inherit not only land but also debt and the trauma of unpaid dues. Migration became the new normal, but returns only more debt, illness, and injury.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research Approach: Bridging Design with Ethnography</h2>
+      <div class="research-approach">
+        <p style="color: var(--text-secondary); margin-bottom: 16px;">
+          As a Communication Design researcher, my aim was not only to document but to design visual narratives and a documentary film that convey the lived experiences of the Sahariyas in their own voices. Inside Sehrana was not just a piece of academic work but a lived ethnographic experience—an attempt to humanize, document, and co-communicate the marginalized lives of one of India's most vulnerable tribal communities.
+        </p>
+        <ul>
+          <li><strong>Ethnographic Fieldwork in 12 Villages:</strong> Extended immersion across Sahariya settlements in Sheopur district, Madhya Pradesh, participating in daily life, agricultural work, and community events to build deep trust and understanding</li>
+          <li><strong>Participatory Research and Workshops:</strong> In one participatory design workshop, I asked Sahariya youth to draw their homes and surroundings. The sketches told powerful stories—of resilience, memory, and forgotten landscapes. Through these illustrations, I began co-creating a visual library of their lives, which later evolved into the storyboard of the film project.</li>
+          <li><strong>Interviews with Tribal Members, Activists, and Local Officials:</strong> Documented 40+ household economies and interviewed government officials, NGO workers, moneylenders, and agricultural brokers to understand systemic barriers from multiple perspectives</li>
+          <li><strong>Visual Documentation Through Photography, Video, and Storyboards:</strong> Combined documentary filmmaking and photography to capture the visual narrative of daily life, land displacement, and community resilience. Produced documentary film "insideSehrana" and photo essay.</li>
+          <li><strong>Living Conditions Research:</strong> Most houses were built with mud and stone slabs. Basic amenities like clean water, electricity, and toilets were largely absent. The word "Sehrana" is a local term for Sahariya settlements—clusters often located at the margins of mainstream villages.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="actions-section">
+      <h2>5 Research Principles That Guided This Work</h2>
+      <ul class="actions-list">
+        <li>
+          <span class="principle">Deep Contextualization</span>
+          <strong>Immersive Field Presence Over Extractive Data Collection</strong>
+          <p>Rather than conducting brief interviews and leaving, I embedded myself in the community for 6 months. This longitudinal approach revealed patterns invisible in short-term research—like seasonal debt cycles and the emotional toll of land displacement—that only emerge through sustained observation and relationship building.</p>
+        </li>
+        <li>
+          <span class="principle">Participatory Research</span>
+          <strong>Community as Co-Researchers, Not Just Subjects</strong>
+          <p>Trained 8 community members in basic documentation techniques, giving them cameras and voice recorders. Their insider perspective captured moments and conversations I never could as an outsider—family disputes about land sales, private conversations between women, children's perspectives on migration.</p>
+        </li>
+        <li>
+          <span class="principle">Visual Storytelling</span>
+          <strong>Film and Photography as Research Tools</strong>
+          <p>Visual documentation wasn't just for presentation—it was core research methodology. Reviewing footage with families sparked deeper conversations ("Why did you look away when talking about the moneylender?"), and photos became artifacts that families could use to advocate for themselves.</p>
+        </li>
+        <li>
+          <span class="principle">Systems Thinking</span>
+          <strong>Mapping Interconnected Barriers, Not Isolated Problems</strong>
+          <p>Created visual maps showing how debt, land displacement, lack of education, and migration form reinforcing cycles. Helped community leaders and NGO partners see that interventions targeting single issues (like microcredit) often fail because they don't address the interconnected system.</p>
+        </li>
+        <li>
+          <span class="principle">Ethical Documentation</span>
+          <strong>Informed Consent and Story Ownership</strong>
+          <p>All participants reviewed their interviews and photos before publication. Families retained ownership of their stories and images, deciding what could be shared publicly. Some stories remain private—respecting that not all struggles need to be made visible to be valid.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Impact</h2>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <span class="number">40+</span>
+          <span class="label">Families Documented</span>
+        </div>
+        <div class="impact-card">
+          <span class="number">6 Months</span>
+          <span class="label">Field Immersion</span>
+        </div>
+        <div class="impact-card">
+          <span class="number">3 Districts</span>
+          <span class="label">Across Chambal Valley</span>
+        </div>
+        <div class="impact-card">
+          <span class="number">Documentary</span>
+          <span class="label">Film + Photo Essay</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Visual Documentation</h2>
+      <div class="photo-grid">
+        <div class="photo-item">Field photograph placeholder</div>
+        <div class="photo-item">Community portrait placeholder</div>
+        <div class="photo-item">Daily life documentation placeholder</div>
+      </div>
+      <p style="text-align: center; color: var(--text-secondary); font-style: italic; margin-top: 16px;">
+        Documentary photography and film captured the daily realities of the Sahariya community—from agricultural labor to family gatherings to moments of quiet resilience.
+      </p>
+    </section>
+
+    <section>
+      <h2>A Call to Action</h2>
+      <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px;">
+        Inside Sehrana is a mirror held up to India's tribal development paradox. It challenges us—designers, researchers, policymakers, and citizens—to rethink tribal development beyond numbers and schemes, to design with (not for) communities, and to bridge policy and empathy through participatory approaches. The Sahariyas don't just need help—they need dignity, recognition, and justice.
+      </p>
+      <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px;">
+        Research is not just about data—it's about witnessing. Living among the Sahariyas changed how I see India's development narrative. It taught me that the stories that matter most are often hidden in silence, wrapped in debt, and spoken through eyes more than words.
+      </p>
+      <p style="color: var(--text-secondary); line-height: 1.8;">
+        Inside Sehrana is a humble attempt to amplify those voices. I hope it reaches those who can bring real change. The Sahariya families I lived alongside showed me that ethnographic research isn't about extracting data—it's about witnessing, listening, and using your skills as a researcher to make invisible struggles visible. Their stories continue to shape how I approach all research: with humility, patience, and a commitment to centering the voices of those whose experiences are too often overlooked.
+      </p>
+    </section>
+  </div>
+
+  <footer style="background: var(--surface); padding: 48px 24px; text-align: center; margin-top: 80px;">
+    <p style="color: var(--text-secondary); margin-bottom: 16px;">
+      <strong>Documentary Film:</strong> <a href="#" style="color: var(--accent); text-decoration: none;">insideSehrana</a> — a film by Kunal Gupta
+    </p>
+    <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 24px;">
+      Grateful to my mentors Prof. Vishwajit Pandya and Prof. Madhumita Mazumdar at Dhirubhai Ambani University for their guidance and support throughout my academics and during the Inside Sehrana journey.
+    </p>
+    <p style="color: var(--text-secondary);">Kunal Gupta — Field Ethnographer & UX Researcher</p>
+    <p style="color: var(--text-secondary); margin-top: 16px;">
+      <a href="index.html#work" style="display: inline-block; padding: 10px 24px; background: var(--accent); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; font-size: 14px; letter-spacing: 0.02em; text-transform: uppercase;">← Back to All Work</a>
+    </p>
+  </footer>
+</body>
+</html>

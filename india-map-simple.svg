@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" style="max-width: 100%; height: auto;">
+  <defs>
+    <style>
+      .india-outline {
+        fill: none;
+        stroke: oklch(56% 0.12 170);
+        stroke-width: 3;
+      }
+      .coverage-dots {
+        fill: oklch(56% 0.12 170);
+        opacity: 0.8;
+      }
+      .coverage-dots:hover {
+        opacity: 1;
+      }
+      .label-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+        font-size: 14px;
+        fill: oklch(20% 0.02 240);
+        font-weight: 500;
+      }
+      .stat-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+        font-size: 32px;
+        fill: oklch(56% 0.12 170);
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+
+  <!-- Simplified India outline -->
+  <path class="india-outline" d="M 150,50
+    Q 160,45 175,50
+    L 200,60
+    Q 210,65 215,75
+    L 220,95
+    Q 222,105 220,115
+    L 240,130
+    Q 250,135 260,145
+    L 280,160
+    L 295,180
+    Q 298,190 295,200
+    L 310,220
+    Q 315,235 310,250
+    L 315,275
+    Q 318,290 315,305
+    L 305,330
+    L 285,350
+    L 275,370
+    Q 270,385 260,395
+    L 240,415
+    L 220,435
+    Q 210,445 200,450
+    L 185,465
+    L 175,485
+    Q 170,500 165,510
+    L 155,525
+    Q 148,535 140,540
+    L 125,545
+    Q 115,545 110,540
+    L 95,530
+    Q 88,520 85,505
+    L 80,485
+    Q 78,470 80,455
+    L 85,430
+    L 90,405
+    Q 92,390 90,375
+    L 85,350
+    L 75,325
+    Q 70,310 70,295
+    L 72,270
+    Q 75,250 80,235
+    L 90,210
+    L 100,185
+    Q 105,170 110,160
+    L 120,140
+    L 130,120
+    Q 135,105 138,95
+    L 142,75
+    Q 145,60 150,50 Z"/>
+
+  <!-- Coverage dots representing cities visited -->
+  <g class="coverage-dots">
+    <!-- North -->
+    <circle cx="160" cy="85" r="4"/>
+    <circle cx="175" cy="95" r="3"/>
+    <circle cx="190" cy="105" r="4"/>
+    <circle cx="205" cy="115" r="3"/>
+    <circle cx="165" cy="110" r="3"/>
+    <circle cx="180" cy="120" r="4"/>
+
+    <!-- Northwest -->
+    <circle cx="140" cy="130" r="4"/>
+    <circle cx="155" cy="145" r="3"/>
+    <circle cx="170" cy="155" r="4"/>
+    <circle cx="125" cy="150" r="3"/>
+
+    <!-- Northeast -->
+    <circle cx="220" cy="140" r="4"/>
+    <circle cx="235" cy="155" r="3"/>
+    <circle cx="250" cy="170" r="4"/>
+    <circle cx="265" cy="185" r="3"/>
+    <circle cx="280" cy="200" r="4"/>
+    <circle cx="290" cy="220" r="3"/>
+
+    <!-- Central -->
+    <circle cx="195" cy="170" r="4"/>
+    <circle cx="210" cy="185" r="3"/>
+    <circle cx="180" cy="190" r="4"/>
+    <circle cx="165" cy="205" r="3"/>
+    <circle cx="150" cy="220" r="4"/>
+    <circle cx="135" cy="235" r="3"/>
+    <circle cx="200" cy="210" r="4"/>
+    <circle cx="185" cy="225" r="3"/>
+    <circle cx="220" cy="200" r="4"/>
+    <circle cx="235" cy="215" r="3"/>
+
+    <!-- West -->
+    <circle cx="100" cy="250" r="4"/>
+    <circle cx="115" cy="265" r="3"/>
+    <circle cx="105" cy="280" r="4"/>
+    <circle cx="95" cy="295" r="3"/>
+    <circle cx="88" cy="315" r="4"/>
+
+    <!-- Central-South -->
+    <circle cx="155" cy="270" r="4"/>
+    <circle cx="170" cy="285" r="3"/>
+    <circle cx="185" cy="300" r="4"/>
+    <circle cx="200" cy="285" r="3"/>
+    <circle cx="215" cy="270" r="4"/>
+    <circle cx="230" cy="255" r="3"/>
+    <circle cx="245" cy="240" r="4"/>
+    <circle cx="260" cy="260" r="3"/>
+    <circle cx="275" cy="280" r="4"/>
+    <circle cx="285" cy="295" r="3"/>
+    <circle cx="270" cy="315" r="4"/>
+    <circle cx="255" cy="330" r="3"/>
+
+    <!-- South -->
+    <circle cx="145" cy="330" r="4"/>
+    <circle cx="130" cy="345" r="3"/>
+    <circle cx="145" cy="360" r="4"/>
+    <circle cx="160" cy="350" r="3"/>
+    <circle cx="175" cy="340" r="4"/>
+    <circle cx="190" cy="330" r="3"/>
+    <circle cx="205" cy="345" r="4"/>
+    <circle cx="220" cy="360" r="3"/>
+    <circle cx="235" cy="375" r="4"/>
+    <circle cx="240" cy="395" r="3"/>
+    <circle cx="230" cy="415" r="4"/>
+    <circle cx="215" cy="430" r="3"/>
+    <circle cx="200" cy="445" r="4"/>
+    <circle cx="185" cy="455" r="3"/>
+    <circle cx="170" cy="465" r="4"/>
+    <circle cx="155" cy="475" r="3"/>
+    <circle cx="140" cy="485" r="4"/>
+    <circle cx="125" cy="495" r="3"/>
+    <circle cx="115" cy="510" r="4"/>
+  </g>
+
+  <!-- Stats overlay -->
+  <g transform="translate(240, 450)">
+    <text class="stat-text" x="0" y="0">218</text>
+    <text class="label-text" x="0" y="20">Cities</text>
+
+    <text class="stat-text" x="0" y="55">30</text>
+    <text class="label-text" x="0" y="75">States & UTs</text>
+
+    <text class="stat-text" x="0" y="110">350+</text>
+    <text class="label-text" x="0" y="130">Interviews</text>
+  </g>
+</svg>

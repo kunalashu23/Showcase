@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Off-Grid Research — IIT Bombay & Ministry of Renewable Energy | Kunal Gupta</title>
+  <meta name="description" content="Pan-India ethnographic documentation of solar off-grid adoption — 10 states, 50+ villages, 12 short films for IIT Bombay and Boston College School of Social Work">
+  <style>
+    :root {
+      /* Pure Google Material Design System */
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-variant: #f5f5f5;
+      --fg: #212121;
+      --fg-secondary: #757575;
+      --muted: #9e9e9e;
+      --border: #e0e0e0;
+
+      /* Material Blue Palette */
+      --accent: #1976d2;
+      --accent-light: #42a5f5;
+      --accent-dark: #1565c0;
+      --accent-on: #ffffff;
+      --accent-hover: #1565c0;
+      --accent-active: #0d47a1;
+      --accent-soft: #e3f2fd;
+
+      /* Indian Cultural Color Palette */
+      --saffron: #ff9933;
+      --india-green: #138808;
+      --solar-orange: #ffa500;
+
+      /* Material Semantic Colors */
+      --success: #4caf50;
+      --warn: #ff9800;
+      --danger: #f44336;
+      --info: #2196f3;
+
+      /* Material Typography */
+      --font-display: "Roboto", "Helvetica Neue", sans-serif;
+      --font-body: "Roboto", "Helvetica Neue", sans-serif;
+      --font-mono: "Roboto Mono", ui-monospace, monospace;
+
+      /* Material Elevation Shadows */
+      --elevation-0: none;
+      --elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      --elevation-2: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+      --elevation-3: 0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.10);
+      --elevation-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--surface);
+      box-shadow: var(--elevation-2);
+      z-index: 1000;
+    }
+
+    nav .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--fg);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(255, 153, 51, 0.08) 0%, rgba(19, 136, 8, 0.08) 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--fg);
+      letter-spacing: -0.015em;
+    }
+
+    .hero .lead {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 40px;
+      line-height: 1.65;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-meta div {
+      text-align: center;
+    }
+
+    .project-meta strong {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .project-meta span {
+      font-size: 18px;
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .content-narrow {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* Section */
+    section {
+      padding: 64px 24px;
+    }
+
+    section h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 500;
+      margin-bottom: 16px;
+      color: var(--fg);
+      letter-spacing: -0.01em;
+    }
+
+    section h3 {
+      font-size: clamp(20px, 3vw, 24px);
+      font-weight: 500;
+      margin-bottom: 12px;
+      margin-top: 32px;
+      color: var(--fg);
+    }
+
+    section p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--fg);
+      margin-bottom: 20px;
+    }
+
+    /* Impact Cards */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .impact-card {
+      background: var(--surface);
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      box-shadow: var(--elevation-1);
+    }
+
+    .impact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--elevation-4);
+      border-color: var(--accent);
+    }
+
+    .impact-card .number {
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .impact-card .label {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* Process Steps */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .process-card {
+      background: var(--surface);
+      padding: 28px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      position: relative;
+      transition: all 0.2s;
+    }
+
+    .process-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--saffron) 0%, var(--solar-orange) 50%, var(--india-green) 100%);
+      border-radius: 8px 8px 0 0;
+    }
+
+    .process-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--elevation-3);
+    }
+
+    .process-card .step-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .process-card h4 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--fg);
+    }
+
+    .process-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Quote Block */
+    .quote-block {
+      background: var(--surface);
+      padding: 40px;
+      border-radius: 8px;
+      border-left: 4px solid var(--accent);
+      margin: 40px 0;
+      box-shadow: var(--elevation-2);
+    }
+
+    .quote-block p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--fg);
+      font-style: italic;
+      margin-bottom: 0;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: var(--accent-on);
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      box-shadow: var(--elevation-2);
+      margin-top: 40px;
+    }
+
+    .back-link:hover {
+      background: var(--accent-dark);
+      box-shadow: var(--elevation-4);
+      transform: translateY(-2px);
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 16px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      background: var(--surface);
+      padding: 48px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 64px 0;
+    }
+
+    .stats-bar h3 {
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 40px;
+      color: var(--fg);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stat-item .number {
+      font-size: 48px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-item .label {
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 24px 40px;
+      }
+
+      section {
+        padding: 48px 24px;
+      }
+
+      .project-meta {
+        gap: 20px;
+      }
+
+      .process-grid,
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quote-block {
+        padding: 24px;
+      }
+
+      .quote-block p {
+        font-size: 16px;
+      }
+    }
+
+    ul, ol {
+      margin-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Kunal Gupta</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="container">
+      <h1>Solar Off-Grid Research — National Renewable Energy Initiative</h1>
+      <p class="lead">
+        Pan-India ethnographic documentation supporting IIT Bombay and Boston College School of Social Work — visual storytelling, community training, and field research across 10 states for Ministry of Renewable Energy's solar adoption study
+      </p>
+      <div class="project-meta">
+        <div>
+          <strong>Organization</strong>
+          <span>IIT Bombay & MNRE</span>
+        </div>
+        <div>
+          <strong>Role</strong>
+          <span>Ethnographic Filmmaker</span>
+        </div>
+        <div>
+          <strong>Duration</strong>
+          <span>18 months</span>
+        </div>
+        <div>
+          <strong>Scale</strong>
+          <span>10 states, 1000+ Blocks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container content-narrow">
+      <h2>Project Overview</h2>
+      <p>
+        Supported IIT Bombay's research on India's National Solar Mission off-grid programme — a multi-phase initiative aiming to deploy 2000 MW equivalent of solar off-grid systems across rural India by 2022. My role focused on ethnographic documentation, visual storytelling, and community engagement to capture adoption patterns, behavioral insights, and ground-level implementation challenges.
+      </p>
+      <p>
+        The National Solar Mission targeted areas with unreliable or no grid power through applications including solar home lighting systems, street lighting, power plants, pumps, lanterns, and study lamps. The programme had deployed <strong>84+ lakh solar lamps, 5+ lakh solar pumps, 9+ lakh solar street lights, and 17+ lakh home lighting systems</strong> by the time of this research.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Ethnographic Film</span>
+        <span class="tag">Visual Documentation</span>
+        <span class="tag">Community Training</span>
+        <span class="tag">Field Research</span>
+        <span class="tag">National Policy</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <h3>Research Scale</h3>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="number">10</div>
+        <div class="label">States Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">1000+</div>
+        <div class="label">Blocks Documented</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">12</div>
+        <div class="label">Short Films Produced</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">SHG</div>
+        <div class="label">Women Trained</div>
+      </div>
+      <div class="stat-item">
+        <div class="number">100s</div>
+        <div class="label">Students Engaged</div>
+      </div>
+    </div>
+  </div>
+
+  <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container content-narrow">
+      <h2>National Context</h2>
+      <p>
+        The Ministry of New and Renewable Energy (MNRE) launched the Off-grid Solar PV Applications Programme to provide solar-based solutions in areas with unreliable or absent grid power. The programme evolved through three phases:
+      </p>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="number">Phase I</div>
+          <div class="label">2010-13: 252.5 MW sanctioned, 117 MW installed across pilot implementations</div>
+        </div>
+        <div class="impact-card">
+          <div class="number">Phase II</div>
+          <div class="label">2014-17: 713 MW sanctioned, 345.5 MW installed with rural development focus</div>
+        </div>
+        <div class="impact-card">
+          <div class="number">Phase III</div>
+          <div class="label">2018-21: 20.09 MW sanctioned, 15.67 MW installed for government institutions</div>
+        </div>
+      </div>
+
+      <h3>Programme Reach</h3>
+      <p>By December 2022, the Off-grid programme had achieved:</p>
+      <ul>
+        <li><strong>84,59,119 solar lamps/lanterns</strong> distributed</li>
+        <li><strong>5,00,499 solar pumps</strong> installed for irrigation and drinking water</li>
+        <li><strong>9,44,802 solar street lights</strong> under schemes including Atal Jyoti Yojana (AJAY)</li>
+        <li><strong>17,23,479 solar home lighting systems</strong> deployed</li>
+        <li><strong>217 MWp solar power plants/packs</strong> commissioned</li>
+      </ul>
+      <p>
+        The programme prioritized states with less than 50% household electrification (Census 2011): Assam, Bihar, Jharkhand, Odisha, Uttar Pradesh, and the North-Eastern region.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container content-narrow">
+      <h2>Ethnographic Documentation Methodology</h2>
+      <p>
+        My work centered on visual ethnography — documenting the lived experience of solar adoption through film, photography, and participatory storytelling. This approach captured behavioral patterns, cultural contexts, and implementation barriers that quantitative metrics alone couldn't reveal.
+      </p>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="step-number">1</div>
+          <h4>Multi-State Field Research</h4>
+          <p>Traveled across 10 states mapping diverse geographies, socioeconomic contexts, and infrastructure challenges. Documented 1000+ blocks including rural, tribal, and marginalized communities with varying solar adoption rates.</p>
+        </div>
+        <div class="process-card">
+          <div class="step-number">2</div>
+          <h4>12 Short Film Productions</h4>
+          <p>Produced ethnographic documentary films capturing user stories, adoption patterns, maintenance challenges, and quality-of-life impacts. Films used for academic research, policy advocacy, and stakeholder communication.</p>
+        </div>
+        <div class="process-card">
+          <div class="step-number">3</div>
+          <h4>Visual Documentation</h4>
+          <p>Created comprehensive photo essays and visual narratives showing installation processes, daily usage patterns, household transformations, and community-level infrastructure development.</p>
+        </div>
+        <div class="process-card">
+          <div class="step-number">4</div>
+          <h4>SHG Women Training</h4>
+          <p>Trained Self-Help Group (SHG) women on basic solar maintenance, troubleshooting, and community mobilization — building local capacity for programme sustainability.</p>
+        </div>
+        <div class="process-card">
+          <div class="step-number">5</div>
+          <h4>Student Engagement</h4>
+          <p>Conducted awareness campaigns and training sessions for students on solar technology, clean energy benefits, and environmental impact — reaching hundreds of young learners across 1000+ blocks.</p>
+        </div>
+        <div class="process-card">
+          <div class="step-number">6</div>
+          <h4>Village-Level Awareness</h4>
+          <p>Organized grassroots awareness campaigns demonstrating solar applications, addressing misconceptions, and facilitating community dialogue on renewable energy adoption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container content-narrow">
+      <h2>Key Insights Documented</h2>
+
+      <h3>Adoption Barriers & User Behavior</h3>
+      <ul>
+        <li><strong>Quality perception gaps:</strong> Documented user skepticism toward solar technology reliability and lifespan concerns</li>
+        <li><strong>Maintenance knowledge deficits:</strong> Captured on-the-ground challenges in troubleshooting and basic upkeep without accessible service networks</li>
+        <li><strong>Cultural integration:</strong> Filmed how solar lighting transformed evening routines, education practices, and household productivity in kerosene-dependent communities</li>
+        <li><strong>Gender-specific impacts:</strong> Documented how solar street lights improved women's mobility and safety after dark</li>
+      </ul>
+
+      <h3>Implementation Challenges</h3>
+      <ul>
+        <li><strong>Last-mile distribution:</strong> Visualized logistical hurdles in remote, difficult-to-access tribal and hilly regions</li>
+        <li><strong>Supplier quality variance:</strong> Captured performance inconsistencies across different solar product brands and procurement batches</li>
+        <li><strong>Policy-to-practice gaps:</strong> Documented delays between programme sanctions and actual installation due to administrative bottlenecks</li>
+        <li><strong>Community awareness:</strong> Filmed low awareness levels about programme eligibility and application processes in underserved blocks</li>
+      </ul>
+
+      <h3>Success Stories & Impact</h3>
+      <ul>
+        <li><strong>Student study patterns:</strong> Documented how 8 million students benefitted with solar study lamps, enabling evening homework and exam preparation in non-electrified households</li>
+        <li><strong>Livelihood enhancement:</strong> Captured stories of farmers using solar pumps for irrigation, increasing crop yields and income stability</li>
+        <li><strong>Health improvements:</strong> Filmed reduction in kerosene-related indoor air pollution and respiratory issues post-solar adoption</li>
+        <li><strong>Economic savings:</strong> Documented household budget shifts as families eliminated kerosene expenditure and mobile charging costs</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container content-narrow">
+      <h2>Collaborative Research Outputs</h2>
+      <p>
+        The ethnographic documentation supported academic research by IIT Bombay's Energy Systems Engineering team and Boston College School of Social Work's international development programme. Visual narratives complemented quantitative surveys and technical assessments with qualitative human-centered insights.
+      </p>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="number">IIT Bombay</div>
+          <div class="label">Technical & behavioral research on solar adoption patterns and policy recommendations</div>
+        </div>
+        <div class="impact-card">
+          <div class="number">Boston College</div>
+          <div class="label">Social work lens on community development, livelihood impacts, and vulnerable populations</div>
+        </div>
+        <div class="impact-card">
+          <div class="number">MNRE</div>
+          <div class="label">Ministry stakeholders used visual documentation for policy review and programme communication</div>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <p>
+          "The visual ethnography bridged the gap between policy intent and ground reality — showing not just installation numbers but the lived experience of energy access transformation in rural India."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container content-narrow">
+      <h2>Programme Scale Context</h2>
+      <p>
+        This ethnographic work documented a fraction of a massive national initiative. By the research period, the Off-grid programme had reached:
+      </p>
+      <ul>
+        <li><strong>Atal Jyoti Yojana (AJAY):</strong> 2.72 lakh solar street lights installed in Phase I and II across low-electrification states, funded through MPLADS and MNRE central financial assistance</li>
+        <li><strong>Solar Study Lamps:</strong> 60 lakh lamps distributed to school-going children in blocks with more than 50% kerosene-dependent households</li>
+        <li><strong>Geographic coverage:</strong> Special focus on Assam, Bihar, Jharkhand, Odisha, Uttar Pradesh, NER states, J&K, Himachal Pradesh, Uttarakhand, island UTs, and aspirational districts</li>
+        <li><strong>Integrated schemes:</strong> Standalone pumps transitioned to PM KUSUM scheme; solar home lights integrated into Saubhagya scheme under Ministry of Power</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="container content-narrow">
+      <h2>Personal Impact & Skills Developed</h2>
+      <p>
+        This project was foundational in shaping my ethnographic practice and cross-disciplinary research approach. It required balancing filmmaker, educator, and field researcher roles while navigating diverse cultural, linguistic, and geographic contexts.
+      </p>
+
+      <h3>Skills Applied & Honed</h3>
+      <ul>
+        <li><strong>Visual ethnography:</strong> Documentary filmmaking, photo essays, participatory video techniques</li>
+        <li><strong>Community engagement:</strong> Building trust with marginalized communities, culturally sensitive communication</li>
+        <li><strong>Training & capacity building:</strong> Designing and delivering workshops for SHG women and rural students with varying literacy levels</li>
+        <li><strong>Stakeholder collaboration:</strong> Coordinating with academic institutions, government ministries, and local NGOs</li>
+        <li><strong>Multi-state logistics:</strong> Planning and executing field visits across 10 states with limited infrastructure and connectivity</li>
+      </ul>
+
+      <p>
+        The experience underscored the power of visual storytelling in policy research — how a single film of a grandmother studying under a solar lamp can communicate adoption impact more viscerally than a hundred data tables.
+      </p>
+
+      <a href="index.html#work" class="back-link">
+        ← Back to All Work
+      </a>
+    </div>
+  </section>
+
+</body>
+</html>

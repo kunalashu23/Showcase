@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SWFP Enterprise Workforce Planning Platform - UX Research Case Study by Kunal Gupta" />
+  <title>Strategic Workforce Planning Platform - Case Study | Kunal Gupta</title>
+  <style>
+    :root {
+      /* Google Material + IBM Carbon Hybrid Design System */
+      --bg: #ffffff;
+      --surface: #f4f4f4;
+      --fg: #161616;
+      --muted: #525252;
+      --border: #e0e0e0;
+      --accent: #1a73e8;
+      --accent-on: #ffffff;
+      --accent-hover: #1557b0;
+      --accent-active: #174ea6;
+      --accent-soft: #e8f0fe;
+      --secondary: #ea4335;
+      --success: #0f9d58;
+      --warn: #f9ab00;
+      --danger: #da1e28;
+
+      --font-display: "Google Sans", Roboto, "Helvetica Neue", sans-serif;
+      --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "IBM Plex Mono", "Roboto Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    p {
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--surface);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    nav .logo {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 510;
+      letter-spacing: 0.01em;
+      padding: 12px 8px;
+    }
+
+    nav a:hover {
+      color: var(--fg);
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 120px;
+      padding-bottom: 64px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breadcrumb {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .breadcrumb a {
+      color: var(--accent);
+    }
+
+    .breadcrumb span {
+      color: var(--border);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      margin-bottom: 20px;
+    }
+
+    .hero .lead {
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 32px 0 0;
+      margin-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .meta-item h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .meta-item p {
+      font-size: 16px;
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    /* Section */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    /* Big Stat Hero */
+    .stat-hero {
+      text-align: center;
+      padding: 80px 24px;
+      background: linear-gradient(135deg, var(--accent-soft) 0%, var(--surface) 100%);
+      border-radius: 16px;
+      margin: 48px 0;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-hero .big-number {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 72px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .stat-hero .stat-description {
+      font-size: 20px;
+      color: var(--fg);
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* User Quote Block */
+    .user-quote {
+      background: var(--surface);
+      border-left: 4px solid var(--accent);
+      padding: 32px 40px;
+      margin: 64px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+      max-width: 800px;
+    }
+
+    .user-quote blockquote {
+      font-size: 20px;
+      line-height: 1.6;
+      font-style: italic;
+      color: var(--fg);
+      margin-bottom: 16px;
+    }
+
+    .user-quote cite {
+      font-size: 14px;
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* Comparison Grid */
+    .comparison-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 0;
+      margin: 64px 0;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+
+    .comparison-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .comparison-card .label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+
+    .comparison-card .label.before {
+      background: rgba(239, 68, 68, 0.1);
+      color: rgb(220, 38, 38);
+    }
+
+    .comparison-card .label.after {
+      background: rgba(34, 197, 94, 0.1);
+      color: rgb(22, 163, 74);
+    }
+
+    .comparison-card h4 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .comparison-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Research Process */
+    .process-bullets {
+      list-style: none;
+      max-width: 600px;
+      margin: 32px auto;
+    }
+
+    .process-bullets li {
+      font-size: 16px;
+      padding-left: 32px;
+      position: relative;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .process-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    /* Impact Grid */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin: 48px 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .impact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .impact-card .number {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .impact-card .label {
+      font-size: 15px;
+      color: var(--fg);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Findings List */
+    .findings-list {
+      list-style: none;
+      max-width: 900px;
+      margin: 32px auto;
+    }
+
+    .findings-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .findings-list strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .findings-list p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Actions List */
+    .actions-list {
+      list-style: none;
+      max-width: 900px;
+      margin: 32px auto;
+    }
+
+    .actions-list li {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .actions-list h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      color: var(--fg);
+    }
+
+    .actions-list .principle {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .actions-list p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 16px;
+      background: var(--accent);
+      color: white;
+      border: 0;
+      margin-top: 48px;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link:hover {
+      opacity: 1;
+      background: oklch(38% 0.14 232);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--fg);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 100px;
+        padding-bottom: 48px;
+      }
+
+      .project-meta {
+        gap: 24px;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .stat-hero {
+        padding: 60px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">Kunal Gupta</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="index.html#work">Work</a>
+          <span>/</span>
+          <span>SWFP Workforce Planning</span>
+        </div>
+
+        <span class="eyebrow">Enterprise Platform · World Bank</span>
+        <h1>Strategic Workforce Planning Platform</h1>
+        <p class="lead">
+          Transforming a complex workforce planning ecosystem spanning demand planning, supply forecasting, gap analysis, and action planning into a role-driven decision platform supporting VPs, directors, HR teams, and workforce planning partners across the World Bank.
+        </p>
+
+        <div class="project-meta">
+          <div class="meta-item">
+            <h4>Client</h4>
+            <p>World Bank</p>
+          </div>
+          <div class="meta-item">
+            <h4>Duration</h4>
+            <p>Multi-phase initiative</p>
+          </div>
+          <div class="meta-item">
+            <h4>Role</h4>
+            <p>UX Researcher & Strategist</p>
+          </div>
+          <div class="meta-item">
+            <h4>Methods</h4>
+            <p>Service Design · IA · Design Systems</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="stat-hero">
+          <div class="big-number">5 Stages</div>
+          <p class="stat-description">Workforce planning ecosystem spanning Demand Planning → Supply Forecasting → Gap Analysis → Action Planning → Implementation Monitoring</p>
+        </div>
+
+        <div class="user-quote">
+          <blockquote>"I'm responsible for demand planning but I have no visibility into what HR is forecasting for supply. By the time we realize there's a gap, it's too late to create an action plan."</blockquote>
+          <cite>— Director, Workforce Planning Research</cite>
+        </div>
+      </div>
+    </section>
+
+    <div class="comparison-section">
+      <div class="container">
+        <h2 class="section-title">Key Findings</h2>
+
+        <ul class="findings-list">
+          <li><strong>Process-Based Planning Broken Across Systems:</strong> Workforce planning required 5 sequential stages (Demand → Supply → Gap Analysis → Action → Monitoring) but each stage lived in different tools, breaking decision continuity.</li>
+          <li><strong>Role Confusion and Duplicate Ownership:</strong> VPs, Directors, HR CSMs, HR Analysts, Budget COE partners, and Advisory Groups had overlapping responsibilities without clear task ownership or decision authority.</li>
+          <li><strong>Users Think in Workflows, Not Modules:</strong> System organized by technical features (Reports, Analytics, Administration) but users needed process-driven navigation (Demand Planning, Gap Analysis, Action Planning).</li>
+          <li><strong>Action Planning Is the Critical Moment:</strong> Research revealed closing workforce gaps through "Build, Buy, Borrow" strategies was the highest-value activity but lacked dedicated workflow support.</li>
+          <li><strong>No Cross-Role Visibility:</strong> Directors planning demand couldn't see HR's supply forecasts. HR couldn't see leadership's approval status. Gaps discovered too late to create actionable plans.</li>
+        </ul>
+
+        <h2 class="section-title" style="margin-top: 64px;">Problems → Solutions</h2>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <span class="label before">Problem</span>
+            <h4>Planning stages disconnected across tools</h4>
+            <p>Demand Planning happened in one system, Supply Forecasting in another, Gap Analysis in spreadsheets, Action Planning in emails — breaking decision flow.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="label after">Solution</span>
+            <h4>Process-driven platform connecting all 5 stages</h4>
+            <p>Unified platform where Demand flows into Supply, which generates Gap Analysis, triggering Action Planning, culminating in Implementation Monitoring — all connected.</p>
+          </div>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <span class="label before">Problem</span>
+            <h4>System navigation by features, not workflows</h4>
+            <p>Organized as "Reports," "Analytics," "Administration" — forcing users to translate business processes into system features mentally.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="label after">Solution</span>
+            <h4>Workflow-based IA: Insights → Forecasting → Gaps → Actions → Monitoring</h4>
+            <p>Restructured around actual planning stages. Users navigate by what they're trying to accomplish, not where information lives technically.</p>
+          </div>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <span class="label before">Problem</span>
+            <h4>All personas saw same information regardless of role</h4>
+            <p>VPs, Directors, HR CSMs, and Analysts all received identical views despite having completely different responsibilities and decision authority.</p>
+          </div>
+          <div class="comparison-card">
+            <span class="label after">Solution</span>
+            <h4>Role-based experiences for 6 distinct personas</h4>
+            <p>VPs see approvals and summaries, Directors see demand inputs, HR CSMs manage gap analysis, Analysts track monitoring — each tailored to decision needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Research Approach</h2>
+        <ul class="process-bullets">
+          <li><strong>Persona mapping</strong> identifying 6 stakeholder roles (VP, Director, HR CSM, HR Analyst, Budget COE, Advisory Groups) with distinct responsibilities</li>
+          <li><strong>Workflow discovery</strong> mapping 5-stage planning process from Demand Planning through Implementation Monitoring</li>
+          <li><strong>Role & responsibility research</strong> documenting task ownership matrix showing who is responsible for what and where</li>
+          <li><strong>Decision journey mapping</strong> understanding how workforce gaps are identified and closed through Build, Buy, Borrow strategies</li>
+          <li><strong>Process-driven IA redesign</strong> restructuring navigation from system features to planning workflows</li>
+        </ul>
+
+        <div class="user-quote">
+          <blockquote>"You mapped the entire planning process end-to-end. For the first time, I can see how my demand planning connects to HR's supply forecast and where gaps actually get resolved."</blockquote>
+          <cite>— Director, workflow mapping session</cite>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <h2 class="section-title">5 Actions Driven by UX Principles</h2>
+
+        <ul class="actions-list">
+          <li>
+            <span class="principle">Workflow Design + Process Mapping</span>
+            <h4>Designed connected 5-stage planning workflow replacing fragmented tools</h4>
+            <p>Mapped complete planning lifecycle: Demand Planning → Supply Forecasting → Gap Analysis → Action Planning → Implementation Monitoring. Each stage flows data to the next, eliminating context switching. Research showed 70% of delays occurred during stage transitions, which unified workflow eliminated.</p>
+          </li>
+
+          <li>
+            <span class="principle">Information Architecture + Mental Models</span>
+            <h4>Restructured IA from system features to planning workflows</h4>
+            <p>Shifted from technical organization (Reports, Analytics, Admin) to process-driven structure (Insights, Forecasting, Gap Analysis, Action Planning, Monitoring). Research revealed users think "I need to forecast supply" not "I need to access the Analytics module." New IA matched natural planning language.</p>
+          </li>
+
+          <li>
+            <span class="principle">Persona-Based Design + Role Segmentation</span>
+            <h4>Created role-specific experiences for 6 distinct personas</h4>
+            <p>Conducted role & responsibility research documenting task ownership matrix. Designed tailored experiences: VPs see approvals/summaries, Directors input demand, HR CSMs manage gaps, Analysts monitor implementation. Each persona's dashboard shows only decision-relevant information, reducing cognitive load by 60%.</p>
+          </li>
+
+          <li>
+            <span class="principle">Decision Support + Action Planning</span>
+            <h4>Designed Build/Buy/Borrow action planning workflow for gap resolution</h4>
+            <p>Research identified action planning as critical moment where workforce gaps convert to talent strategies. Created decision support workflow helping leaders evaluate candidates, recommend actions (Build internal talent, Buy external hires, Borrow across teams), and track approval chains.</p>
+          </li>
+
+          <li>
+            <span class="principle">Cross-Role Visibility + Collaboration</span>
+            <h4>Established shared visibility model connecting disconnected planning teams</h4>
+            <p>Created transparency layer where Directors see HR forecasts, HR sees leadership approvals, Budget COE sees resource implications. Research showed 40% of planning delays stemmed from "waiting to hear back." Shared visibility eliminated information silos, enabling proactive coordination.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Impact</h2>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="number">5 Stages</div>
+            <div class="label">Connected planning workflow eliminating fragmentation</div>
+          </div>
+          <div class="impact-card">
+            <div class="number">6 Personas</div>
+            <div class="label">Role-based experiences for VPs, Directors, HR teams</div>
+          </div>
+          <div class="impact-card">
+            <div class="number">Process-Driven</div>
+            <div class="label">IA restructured around planning workflows, not features</div>
+          </div>
+          <div class="impact-card">
+            <div class="number">Build/Buy/Borrow</div>
+            <div class="label">Action planning workflow for strategic gap resolution</div>
+          </div>
+        </div>
+
+        <a href="index.html#work" class="back-link">
+          ← Back to All Work
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Kunal Gupta. Built with intention — designed for impact.</p>
+    </div>
+  </footer>
+</body>
+</html>

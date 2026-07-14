@@ -1,0 +1,302 @@
+{
+  "schema": "open-design.design-manifest.v1",
+  "title": "3451e45d-5131-42b4-b513-4701e3127260 - Copy",
+  "entryFile": "index.html",
+  "sourceFiles": {
+    "all": [
+      "about.html",
+      "bajaj-case-study.html",
+      "expertise-dashboard.html",
+      "film-photography.html",
+      "iff-case-study.html",
+      "index.html",
+      "india_map_resources.md",
+      "india_map_states.svg",
+      "india-map-custom.svg",
+      "india-map-simple.svg",
+      "intel-case-study.html",
+      "mr0rydqt-Kunal_Gupta_Senior_UX_Consultant_Resume.pdf",
+      "mr3k7vhk-Developer-Toolbox-Usability-Report.pdf",
+      "mr3k7vk2-Case-Study-2---PFM-Insights-Research-Analysis.pdf",
+      "mr3k7vtl-Case-Study-1---No-Code-Research-Report.pdf",
+      "mr3kpa2y-IMG_5070.PNG",
+      "mradfe4o-image.png",
+      "mrd0q1nf-Kunal.jpg",
+      "mrd2aljx-screencapture-iffconnect-iff-sites-dts-SitePageModern-42468-ai-self-service-portal-homepage-2026-06-19-09_52_15.png",
+      "mrd2b8t8-AI-Self-Service-Portal---UX-Research.pdf",
+      "mrd2vzw5-Developer-Toolbox-Usability-Report.pdf",
+      "mrd2w03v-Case-Study-2---PFM-Insights-Research-Analysis.pdf",
+      "mrd2w0u1-Case-Study-1---No-Code-Research-Report.pdf",
+      "mrd3lrp3-Wireframe-and-Mockup-Creation.png",
+      "mrd3lrpj-Wireframe-Creation.pdf",
+      "mretd2x0-drawing-2026-07-10T10-49-38-803Z.png",
+      "mretjrgr-drawing-2026-07-10T10-54-50-564Z.png",
+      "mretnxh0-drawing-2026-07-10T10-58-04-971Z.png",
+      "mrj38t3w-image.png",
+      "ongc-case-study.html",
+      "penfed-case-study.html",
+      "plugin-source/india-map-svg-resources-and-information-mrad8ba9/open-design.json",
+      "plugin-source/india-map-svg-resources-and-information-mrad8ba9/references/provenance.json",
+      "plugin-source/india-map-svg-resources-and-information-mrad8ba9/references/source-1-india_map_resources.md",
+      "plugin-source/india-map-svg-resources-and-information-mrad8ba9/SKILL.md",
+      "reorder_sections.py",
+      "sehrana-case-study.html",
+      "solar-case-study.html",
+      "swfp-case-study.html",
+      "update_case_studies.py"
+    ],
+    "html": [
+      "about.html",
+      "bajaj-case-study.html",
+      "expertise-dashboard.html",
+      "film-photography.html",
+      "iff-case-study.html",
+      "index.html",
+      "intel-case-study.html",
+      "ongc-case-study.html",
+      "penfed-case-study.html",
+      "sehrana-case-study.html",
+      "solar-case-study.html",
+      "swfp-case-study.html"
+    ],
+    "css": [],
+    "scriptsAndComponents": [],
+    "assets": [
+      "india_map_resources.md",
+      "india_map_states.svg",
+      "india-map-custom.svg",
+      "india-map-simple.svg",
+      "mr0rydqt-Kunal_Gupta_Senior_UX_Consultant_Resume.pdf",
+      "mr3k7vhk-Developer-Toolbox-Usability-Report.pdf",
+      "mr3k7vk2-Case-Study-2---PFM-Insights-Research-Analysis.pdf",
+      "mr3k7vtl-Case-Study-1---No-Code-Research-Report.pdf",
+      "mr3kpa2y-IMG_5070.PNG",
+      "mradfe4o-image.png",
+      "mrd0q1nf-Kunal.jpg",
+      "mrd2aljx-screencapture-iffconnect-iff-sites-dts-SitePageModern-42468-ai-self-service-portal-homepage-2026-06-19-09_52_15.png",
+      "mrd2b8t8-AI-Self-Service-Portal---UX-Research.pdf",
+      "mrd2vzw5-Developer-Toolbox-Usability-Report.pdf",
+      "mrd2w03v-Case-Study-2---PFM-Insights-Research-Analysis.pdf",
+      "mrd2w0u1-Case-Study-1---No-Code-Research-Report.pdf",
+      "mrd3lrp3-Wireframe-and-Mockup-Creation.png",
+      "mrd3lrpj-Wireframe-Creation.pdf",
+      "mretd2x0-drawing-2026-07-10T10-49-38-803Z.png",
+      "mretjrgr-drawing-2026-07-10T10-54-50-564Z.png",
+      "mretnxh0-drawing-2026-07-10T10-58-04-971Z.png",
+      "mrj38t3w-image.png",
+      "plugin-source/india-map-svg-resources-and-information-mrad8ba9/open-design.json",
+      "plugin-source/india-map-svg-resources-and-information-mrad8ba9/references/provenance.json",
+      "plugin-source/india-map-svg-resources-and-information-mrad8ba9/references/source-1-india_map_resources.md",
+      "plugin-source/india-map-svg-resources-and-information-mrad8ba9/SKILL.md",
+      "reorder_sections.py",
+      "update_case_studies.py"
+    ]
+  },
+  "screens": [
+    {
+      "file": "about.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "bajaj-case-study.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "expertise-dashboard.html",
+      "role": "product-screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "film-photography.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "iff-case-study.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "index.html",
+      "role": "launcher-overview",
+      "implementationNote": "Use this as the navigation/overview entry only; implement each linked screen file as its own route/surface."
+    },
+    {
+      "file": "intel-case-study.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "ongc-case-study.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "penfed-case-study.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "sehrana-case-study.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "solar-case-study.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    },
+    {
+      "file": "swfp-case-study.html",
+      "role": "screen",
+      "implementationNote": "Preserve visual hierarchy, responsive behavior, and interactive states from this screen."
+    }
+  ],
+  "screenFilePolicy": {
+    "mode": "screen-file-first",
+    "entryFileRole": "launcher-overview",
+    "rules": [
+      "Each distinct user-facing screen or surface must be delivered and implemented as its own file/route.",
+      "If a landing page is present or requested, keep it in landing.html and do not merge it into the product app screen.",
+      "When multiple HTML screens exist, index.html is a launcher/overview only; it must not be treated as the combined final UI.",
+      "Keep product app screens, landing pages, platform screens, and OS widget surfaces separate in production code."
+    ]
+  },
+  "appModules": [
+    "Identify domain-specific in-app modules from the exported UI; do not reduce them to generic cards.",
+    "For each major module, implement purpose, default/loading/empty/error/success states, and responsive behavior.",
+    "Keep app modules separate from OS home-screen widgets in the production component model."
+  ],
+  "osWidgets": [
+    "If the export includes home-screen, lock-screen, Live Activity, tablet glance, or Android widget surfaces, implement them as platform quick-access surfaces outside the app UI.",
+    "If none are present, do not invent OS widgets unless the product requirements request them."
+  ],
+  "landingPage": {
+    "detection": "Inspect files and screen names for a marketing/landing page surface. If present, keep it separate from product app screens.",
+    "requiredSections": [
+      "hero",
+      "value props",
+      "product proof/screenshots",
+      "feature proof",
+      "CTA"
+    ]
+  },
+  "tokens": {
+    "source": [
+      "index.html"
+    ],
+    "required": [
+      "background",
+      "surface",
+      "foreground",
+      "muted text",
+      "border",
+      "accent",
+      "radius",
+      "shadow",
+      "spacing",
+      "type scale",
+      "motion"
+    ],
+    "note": "Extract/freeze tokens before framework implementation so coding tools do not substitute default theme colors or typography."
+  },
+  "interactions": {
+    "source": [
+      "index.html"
+    ],
+    "requiredStates": [
+      "default",
+      "hover",
+      "focus",
+      "active",
+      "disabled",
+      "loading",
+      "empty",
+      "error",
+      "success"
+    ],
+    "requiredBehaviors": [
+      "forms/validation where present",
+      "tabs/filters where present",
+      "dialogs/sheets/drawers where present",
+      "copy/generate/share actions where present",
+      "player or quick controls where present"
+    ],
+    "note": "If the prototype is static, derive missing behavior from visible controls and document it before coding."
+  },
+  "responsiveViewports": [
+    {
+      "name": "mobile-compact",
+      "width": 360,
+      "height": 800,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "mobile-standard",
+      "width": 390,
+      "height": 844,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "mobile-large",
+      "width": 430,
+      "height": 932,
+      "category": "mobile",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "foldable-small-tablet",
+      "width": 600,
+      "height": 960,
+      "category": "foldable-tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "tablet-portrait",
+      "width": 820,
+      "height": 1180,
+      "category": "tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "category": "tablet",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "laptop",
+      "width": 1366,
+      "height": 768,
+      "category": "desktop",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "category": "desktop",
+      "mustAvoidHorizontalScroll": true
+    },
+    {
+      "name": "wide",
+      "width": 1920,
+      "height": 1080,
+      "category": "wide",
+      "mustAvoidHorizontalScroll": true
+    }
+  ],
+  "implementationChecklist": [
+    "Open entryFile first and map screens, modules, tokens, and interactions.",
+    "Extract tokens before writing framework components.",
+    "Implement app-specific modules with real states instead of generic card grids.",
+    "Preserve or rebuild JS interactions for meaningful UX actions.",
+    "Validate screenshots at desktop/tablet/mobile viewports with no horizontal overflow.",
+    "Keep landing pages, in-app modules, and OS widgets as separate implementation surfaces."
+  ]
+}

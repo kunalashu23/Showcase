@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About Kunal Gupta — Senior UX Researcher with 14 years of experience in field ethnography, enterprise research, and social impact projects.">
+  <meta name="author" content="Kunal Gupta">
+  <title>About — Kunal Gupta | UX Researcher</title>
+  <style>
+    :root {
+      /* Google Material + IBM Carbon Hybrid Design System */
+      --bg: #ffffff;
+      --surface: #f4f4f4;
+      --fg: #161616;
+      --muted: #525252;
+      --border: #e0e0e0;
+      --accent: #1a73e8;
+      --accent-on: #ffffff;
+      --accent-hover: #1557b0;
+      --accent-active: #174ea6;
+      --accent-soft: #e8f0fe;
+      --secondary: #ea4335;
+      --success: #0f9d58;
+      --warn: #f9ab00;
+      --danger: #da1e28;
+
+      --font-display: "Google Sans", Roboto, "Helvetica Neue", sans-serif;
+      --font-body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "IBM Plex Mono", "Roboto Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: clamp(40px, 5vw, 56px);
+      letter-spacing: -0.01em;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: clamp(20px, 3vw, 24px);
+      letter-spacing: normal;
+    }
+
+    p {
+      max-width: 68ch;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: var(--surface);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    nav .logo {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--fg);
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 510;
+      padding: 10px 16px;
+    }
+
+    nav a:hover {
+      color: var(--fg);
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      margin-bottom: 20px;
+    }
+
+    .hero .lead {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Career Journey */
+    .journey-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .journey-landscape {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(to bottom, rgba(42, 105, 178, 0.03) 0%, transparent 100%);
+      border-radius: 16px;
+      padding: 60px 40px 40px;
+      margin-top: 40px;
+    }
+
+    .journey-milestone {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .milestone-node {
+      width: 56px;
+      height: 56px;
+      background: var(--surface);
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(42, 105, 178, 0.15);
+    }
+
+    .milestone-node.highlight {
+      width: 64px;
+      height: 64px;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .milestone-node.highlight svg {
+      stroke: white;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 16px rgba(42, 105, 178, 0.25); }
+      50% { box-shadow: 0 6px 24px rgba(42, 105, 178, 0.4); }
+    }
+
+    .milestone-label {
+      text-align: center;
+      max-width: 140px;
+    }
+
+    .milestone-year {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 4px;
+      letter-spacing: 0.01em;
+    }
+
+    .milestone-title {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Methodology Grid */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .method-card {
+      padding: 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .method-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-soft);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .method-card h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .method-card p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .tool-category h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tool-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--accent-soft);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tool-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .tool-list li {
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--fg);
+    }
+
+    .tool-list li strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      padding: 48px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: var(--accent-on);
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14), 0 3px 4px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    footer .back-btn:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.14), 0 1px 10px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.2);
+      opacity: 1;
+    }
+
+    footer .back-btn:active {
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.14), 0 3px 14px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    footer .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer .footer-links a {
+      color: var(--accent);
+      font-weight: 510;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .journey-landscape {
+        height: auto;
+        padding: 40px 20px;
+      }
+
+      .method-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">Kunal Gupta</a>
+      <div>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="lead" style="margin-top: 0;">
+          A 14-year journey from engineering to UX research, spanning 250+ cities, 50+ projects, and thousands of conversations that shaped products and policy.
+        </p>
+      </div>
+    </section>
+
+    <!-- Career Journey -->
+    <section class="journey-section">
+      <div class="container">
+        <h2>Career Journey · 2006–2024</h2>
+        <p style="color: var(--muted); margin-bottom: 24px;">From electronics engineering to field ethnography — connecting human insights with technology-driven solutions.</p>
+
+        <div class="journey-landscape">
+          <!-- Journey Path SVG -->
+          <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 1000 400" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color: oklch(42% 0.14 232); stop-opacity: 0.3" />
+                <stop offset="100%" style="stop-color: oklch(42% 0.14 232); stop-opacity: 0.8" />
+              </linearGradient>
+            </defs>
+            <path d="M 50 280 Q 180 240, 220 200 T 380 180 T 540 160 T 680 140 T 820 120 L 950 100"
+                  stroke="url(#pathGradient)"
+                  stroke-width="3"
+                  fill="none"
+                  stroke-dasharray="8,6"
+                  opacity="0.6"/>
+          </svg>
+
+          <!-- Milestone Nodes -->
+          <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-start; height: 100%; flex-wrap: wrap; gap: 20px;">
+
+            <!-- 2006-2010: Bachelor's -->
+            <div class="journey-milestone" style="top: 160px;">
+              <div class="milestone-node">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div class="milestone-label">
+                <div class="milestone-year">2006–2010</div>
+                <div class="milestone-title">B.E. Electronics<br/>ITM Gwalior</div>
+              </div>
+            </div>
+
+            <!-- 2010-2015: Engineering & Sales -->
+            <div class="journey-milestone" style="top: 120px;">
+              <div class="milestone-node">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="7" width="20" height="14" rx="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+              </div>
+              <div class="milestone-label">
+                <div class="milestone-year">2010–2015</div>
+                <div class="milestone-title">Sales Engineer<br/>Manufacturing</div>
+              </div>
+            </div>
+
+            <!-- 2015-2017: Masters -->
+            <div class="journey-milestone" style="top: 80px;">
+              <div class="milestone-node highlight">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 16v-4M12 8h.01"/>
+                </svg>
+              </div>
+              <div class="milestone-label">
+                <div class="milestone-year">2015–2017</div>
+                <div class="milestone-title">M.Des.<br/>DA-IICT</div>
+              </div>
+            </div>
+
+            <!-- 2017-2019: IIT Bombay -->
+            <div class="journey-milestone" style="top: 60px;">
+              <div class="milestone-node">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div class="milestone-label">
+                <div class="milestone-year">2017–2019</div>
+                <div class="milestone-title">IIT Bombay<br/>Solar Research</div>
+              </div>
+            </div>
+
+            <!-- 2020-2021: ONGC -->
+            <div class="journey-milestone" style="top: 40px;">
+              <div class="milestone-node">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5"/>
+                </svg>
+              </div>
+              <div class="milestone-label">
+                <div class="milestone-year">2020–2021</div>
+                <div class="milestone-title">ONGC<br/>Creative Lead</div>
+              </div>
+            </div>
+
+            <!-- 2022-2024: Intel -->
+            <div class="journey-milestone" style="top: 20px;">
+              <div class="milestone-node">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <div class="milestone-label">
+                <div class="milestone-year">2022–2024</div>
+                <div class="milestone-title">Intel<br/>UX Researcher</div>
+              </div>
+            </div>
+
+            <!-- 2024-Present: HCLTech -->
+            <div class="journey-milestone" style="top: 0px;">
+              <div class="milestone-node highlight">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                  <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <div class="milestone-label">
+                <div class="milestone-year">2024–Present</div>
+                <div class="milestone-title">HCLTech<br/>Senior UX</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beyond Work -->
+    <section>
+      <div class="container">
+        <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+          <!-- Icon -->
+          <div style="flex-shrink: 0;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" style="color: var(--accent); opacity: 0.7;">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+
+          <!-- Content -->
+          <div style="flex: 1; min-width: 280px;">
+            <h2 style="font-size: 24px; font-weight: 500; margin-bottom: 20px; letter-spacing: -0.01em;">Beyond Work</h2>
+            <p style="font-size: 17px; line-height: 1.7; color: var(--fg); margin-bottom: 16px;">
+              I am a documentary filmmaker, UX researcher, and traveler. I love talking to people and understanding culture, food, lifestyle, their behavior — and learning from the ground. I am a field worker.
+            </p>
+            <p style="font-size: 17px; line-height: 1.7; color: var(--muted);">
+              I've traveled across villages and cities in India on road trips, exploring the diversity of people and places. Now open to global exposure — seeking to understand cultures beyond borders with the same curiosity and depth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Methodology -->
+    <section>
+      <div class="container">
+        <h2>Research Methodology</h2>
+        <p style="color: var(--muted); margin-bottom: 24px;">A human-centered approach combining field ethnography with strategic analysis.</p>
+
+        <div class="method-grid">
+          <div class="method-card">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+            </div>
+            <h3>Field Research</h3>
+            <p>In-depth interviews, ethnographic studies, contextual inquiry, usability testing, and participatory workshops to understand user behaviors and needs.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </div>
+            <h3>Synthesis & Analysis</h3>
+            <p>Thematic coding, affinity mapping, behavioral segmentation, and pattern identification to transform raw data into actionable insights.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18M7 12h10M5 18h14"></path>
+                <circle cx="3" cy="6" r="1" fill="currentColor"></circle>
+                <circle cx="7" cy="12" r="1" fill="currentColor"></circle>
+                <circle cx="5" cy="18" r="1" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <h3>Journey Mapping</h3>
+            <p>Service blueprints, user journey visualization, pain point identification, and opportunity space mapping across touchpoints.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v6.5M15 3l-3 3.5L9 3"></path>
+                <rect x="6" y="9" width="12" height="12" rx="2"></rect>
+                <path d="M9 13h6M9 17h6"></path>
+              </svg>
+            </div>
+            <h3>Strategic Recommendations</h3>
+            <p>Executive reports, product roadmap insights, feature prioritization frameworks, and data-driven design recommendations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div class="container">
+        <h2>Tools & Technologies</h2>
+        <p style="color: var(--muted); margin-bottom: 24px;">Research, design, and AI tools I use to deliver insights.</p>
+
+        <div class="tools-grid">
+          <div class="tool-category">
+            <h3>
+              <div class="tool-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                </svg>
+              </div>
+              Research Tools
+            </h3>
+            <ul class="tool-list">
+              <li><strong>UserTesting</strong> · Usability testing platform</li>
+              <li><strong>Maze</strong> · Remote user research</li>
+              <li><strong>Dovetail</strong> · Qualitative data analysis</li>
+              <li><strong>Optimal Workshop</strong> · Card sorting & tree testing</li>
+              <li><strong>Qualtrics</strong> · Survey design</li>
+              <li><strong>Lookback</strong> · User interview recording</li>
+            </ul>
+          </div>
+
+          <div class="tool-category">
+            <h3>
+              <div class="tool-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                </svg>
+              </div>
+              Design Tools
+            </h3>
+            <ul class="tool-list">
+              <li><strong>Figma</strong> · Prototyping & wireframing</li>
+              <li><strong>Miro</strong> · Workshop facilitation</li>
+              <li><strong>Adobe XD</strong> · Design & prototyping</li>
+              <li><strong>Sketch</strong> · UI design</li>
+              <li><strong>Premiere Pro</strong> · Video editing</li>
+              <li><strong>Photoshop</strong> · Image editing</li>
+            </ul>
+          </div>
+
+          <div class="tool-category">
+            <h3>
+              <div class="tool-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              AI & Automation
+            </h3>
+            <ul class="tool-list">
+              <li><strong>Claude (Anthropic)</strong> · Research synthesis</li>
+              <li><strong>GPT-4</strong> · Analysis & ideation</li>
+              <li><strong>Microsoft Copilot</strong> · Custom agents creation</li>
+              <li><strong>Notion AI</strong> · Documentation</li>
+              <li><strong>Otter.ai</strong> · Interview transcription</li>
+              <li><strong>Synthesia</strong> · Video synthesis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="index.html" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"></path>
+        </svg>
+        Back to Home
+      </a>
+      <div class="footer-links">
+        <span>© 2024 Kunal Gupta</span>
+        <span>·</span>
+        <a href="https://www.linkedin.com/in/kunalgupta5689/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
